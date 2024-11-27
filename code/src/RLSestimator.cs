@@ -43,7 +43,7 @@ namespace Bonsai.ML.RecursiveLeastSquares
                 },
                 (state, obs) =>
                 {
-                    var updateRes = RecursiveLeastSquares.Update(state.w, state.P, obs.t, obs.phi, lambda);
+                    var updateRes = AdaptiveSignalProcessing.RecursiveLeastSquares.Update(state.w, state.P, obs.t, obs.phi, lambda);
                     RLSdataItem rlsDI = new RLSdataItem { w = updateRes.Item1, P = updateRes.Item2 };
                     return rlsDI;
                 });
